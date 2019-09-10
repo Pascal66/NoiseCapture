@@ -43,7 +43,8 @@ import java.util.*;
  */
 public class ThirdOctaveBandsFiltering {
 
-    public enum FREQUENCY_BANDS {REDUCED, FULL};
+    public enum FREQUENCY_BANDS {REDUCED, FULL}
+
     private int expectedSampleLength;
     private int samplingRate;
     private final double[] standardFrequencies;

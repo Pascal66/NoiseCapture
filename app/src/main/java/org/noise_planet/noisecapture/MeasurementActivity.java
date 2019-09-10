@@ -43,7 +43,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
-import android.support.design.widget.TabLayout;
+//import android.support.design.widget.TabLayout;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -68,6 +68,7 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.YAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.google.android.material.tabs.TabLayout;
 
 import org.orbisgis.sos.AcousticIndicators;
 import org.orbisgis.sos.LeqStats;
@@ -289,7 +290,7 @@ public class MeasurementActivity extends MainActivity implements
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
+                                           String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case PERMISSION_RECORD_AUDIO_AND_GPS: {

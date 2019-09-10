@@ -176,7 +176,7 @@ public class AcousticIndicators {
 
         // Bin x across the interval [mu-sigma, mu+sigma]
         int bottomCount = 0;
-        int binCounts[] = new int[1001];
+		int[] binCounts = new int[1001];
         for (i = 0; i < binCounts.length; i++) {
             binCounts[i] = 0;
         }

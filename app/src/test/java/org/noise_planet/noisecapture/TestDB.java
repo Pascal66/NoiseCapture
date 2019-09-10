@@ -53,6 +53,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -250,7 +251,7 @@ public class TestDB {
                     meta.load(zipInputStream);
                 }else if (MeasurementExport.GEOJSON_FILENAME.equals(zipEntry.getName())) {
                     JsonReader jsonReader = new JsonReader(new InputStreamReader(zipInputStream,
-                            "UTF-8"));
+                            StandardCharsets.UTF_8));
                     assertTrue(jsonReader.hasNext());
                     assertEquals(JsonToken.BEGIN_OBJECT, jsonReader.peek());
                     jsonReader.beginObject();

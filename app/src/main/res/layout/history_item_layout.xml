@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/history_date"
                 android:id="@+id/textView_Date_item_history"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:textColor="#fff" />
 

@@ -46,9 +46,11 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
+//import android.support.v4.app.NotificationCompat;
+//import android.support.v4.content.ContextCompat;
 
 import org.orbisgis.sos.LeqStats;
 import org.slf4j.Logger;

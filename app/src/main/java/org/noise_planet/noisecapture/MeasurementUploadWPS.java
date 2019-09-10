@@ -81,7 +81,7 @@ public class MeasurementUploadWPS {
             // Copy beginning of WPS query XML file
             InputStream inputStream = activity.getResources().openRawResource(R.raw.wps_begin);
             try {
-                byte buf[] = new byte[1024];
+				byte[] buf = new byte[1024];
                 int len;
                 while ((len = inputStream.read(buf)) != -1) {
                     os.write(buf, 0, len);
@@ -99,7 +99,7 @@ public class MeasurementUploadWPS {
             // Copy end of WPS query XML file
             inputStream = activity.getResources().openRawResource(R.raw.wps_end);
             try {
-                byte buf[] = new byte[1024];
+				byte[] buf = new byte[1024];
                 int len;
                 while ((len = inputStream.read(buf)) != -1) {
                     os.write(buf, 0, len);

@@ -40,12 +40,11 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import org.noise_planet.openwarble.Configuration;
 import org.noise_planet.openwarble.MessageCallback;
 import org.noise_planet.openwarble.OpenWarble;
-import org.orbisgis.sos.AcousticIndicators;
 import org.orbisgis.sos.LeqStats;
 import org.orbisgis.sos.SOSSignalProcessing;
 import org.orbisgis.sos.ThirdOctaveBandsFiltering;
@@ -238,22 +237,23 @@ public class CalibrationService extends Service implements PropertyChangeListene
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         String value = sharedPref.getString("settings_calibration_audio_output", "STREAM_MUSIC");
 
-        if("STREAM_VOICE_CALL".equals(value)) {
-            return AudioManager.STREAM_VOICE_CALL;
-        } else if("STREAM_SYSTEM".equals(value)) {
-            return AudioManager.STREAM_SYSTEM;
-        } else if("STREAM_RING".equals(value)) {
-            return AudioManager.STREAM_RING;
-        } else if("STREAM_MUSIC".equals(value)) {
-            return AudioManager.STREAM_MUSIC;
-        } else if("STREAM_ALARM".equals(value)) {
-            return AudioManager.STREAM_ALARM;
-        } else if("STREAM_NOTIFICATION".equals(value)) {
-            return AudioManager.STREAM_NOTIFICATION;
-        } else if("STREAM_DTMF".equals(value)) {
-            return AudioManager.STREAM_DTMF;
-        } else {
-            return AudioManager.STREAM_RING;
+        switch (value) {
+            case "STREAM_VOICE_CALL":
+                return AudioManager.STREAM_VOICE_CALL;
+            case "STREAM_SYSTEM":
+                return AudioManager.STREAM_SYSTEM;
+            case "STREAM_RING":
+                return AudioManager.STREAM_RING;
+            case "STREAM_MUSIC":
+                return AudioManager.STREAM_MUSIC;
+            case "STREAM_ALARM":
+                return AudioManager.STREAM_ALARM;
+            case "STREAM_NOTIFICATION":
+                return AudioManager.STREAM_NOTIFICATION;
+            case "STREAM_DTMF":
+                return AudioManager.STREAM_DTMF;
+            default:
+                return AudioManager.STREAM_RING;
         }
     }
 

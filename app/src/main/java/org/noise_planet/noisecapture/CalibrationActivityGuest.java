@@ -230,8 +230,10 @@ public class CalibrationActivityGuest extends MainActivity implements PropertyCh
 
     @Override
     protected void onResume() {
+        super.onResume();
         doBindService();
-        super.onPostResume();    }
+        super.onPostResume();
+    }
 
     @Override
     protected void onPause() {
